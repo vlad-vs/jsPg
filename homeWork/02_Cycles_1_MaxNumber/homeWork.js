@@ -1,7 +1,7 @@
 // Найти наибольшую цифру натурального числа
 // С клавиатуры вводится число. Найти его наибольшую цифру. Например, введено число 764580. Наибольшая цифра в нем 8.
-
-var strFromUser = '764580';
+// +
+var strFromUser = prompt("Введи число: ").trim();
 var max = 0;
 
 for (var i = 0; i < strFromUser.length; ++i) {
@@ -9,4 +9,4 @@ for (var i = 0; i < strFromUser.length; ++i) {
 		max = Number(strFromUser[i]);
 	}
 }
-alert(max);
+alert('Наибольшая цифра: ' + max);

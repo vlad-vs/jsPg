@@ -1,11 +1,13 @@
 // Замена подстроки
 // Найти в строке указанную подстроку и заменить ее на новую. Строку, ее подстроку для замены и новую подстроку вводит пользователь.
 
-var strFromUser = "hello word from user".trim();
+// +
 
-var wordToRaplace = 'word';
+var strFromUser = prompt("Введи строку: ").trim();
 
-var newWord = 'people';
+var wordToRaplace = prompt("Введи подстроку: ").trim();
+
+var newWord = prompt("Введи новую подстроку: ").trim();
 
 var firstIndex = strFromUser.indexOf(wordToRaplace);
 

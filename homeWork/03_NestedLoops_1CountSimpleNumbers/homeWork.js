@@ -1,10 +1,22 @@
 // Посчитать количество простых чисел
 // Вводятся десять натуральных чисел больше 2. Посчитать, сколько среди них простых чисел.
+// +
 
+var arr = [];
+var counter = 0;
 
-var arr = [1, 9, 7, 2, 3, 806, 5];
 var simpleNumber = 0;
 var notSimpleNumber = 0;
+
+while (counter < 10) {
+    var temp = Number(prompt("Введи чисело №" + (counter + 1)).trim());
+    if (temp < 2) {
+        alert('Число меньше 2!!!!');
+    } else {
+        arr.push(temp);
+        ++ counter;
+    }
+}
 
 for (var i = 0; i < arr.length; ++i) {
     if (simpleNumberFun(Number(arr[i]))) {
@@ -13,6 +25,7 @@ for (var i = 0; i < arr.length; ++i) {
         ++notSimpleNumber
     }
 }
+
 alert('Simple numbers = ' + simpleNumber + '\n'
     + "Not simple numbers= " + notSimpleNumber);
 

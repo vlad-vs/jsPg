@@ -110,7 +110,7 @@
 ####[Решение](http://jsfiddle.net/gh/get/library/pure/vlad-vs/jsPg/tree/master/homeWork/03_NestedLoops_3_CountNumbers/)
 
 
-###Sotr
+### Sotr
 
 [Решение]
 

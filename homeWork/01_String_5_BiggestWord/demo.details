@@ -1,6 +1,6 @@
 ---
- name: Polindrom
- description: Write polindrom
+ name: 01_String_5_BiggestWord
+ description:
  authors:
    - Vlad Semenov
  resources:

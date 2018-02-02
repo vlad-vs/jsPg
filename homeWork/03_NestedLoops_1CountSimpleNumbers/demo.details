@@ -1,6 +1,6 @@
 ---
- name: Polindrom
- description: Write polindrom
+ name: 03_NestedLoops_1CountSimpleNumbers
+ description:
  authors:
    - Vlad Semenov
  resources:

@@ -1,5 +1,5 @@
 ---
- name: CamelCase
+ name: 01_String_2_CamelCase
  description:
  authors:
    - Vlad Semenov

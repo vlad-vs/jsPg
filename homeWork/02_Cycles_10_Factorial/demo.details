@@ -1,6 +1,6 @@
 ---
- name: Polindrom
- description: Write polindrom
+ name: 02_Cycles_10_Factorial
+ description:
  authors:
    - Vlad Semenov
  resources:

@@ -1,0 +1,12 @@
+---
+ name: sortBuble
+ description:
+ authors:
+   - Vlad Semenov
+ resources:
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/sortBuble/demo.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/sortBuble/demo.css
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/sortBuble/demo.html
+ normalize_css: no
+
+ ...

@@ -108,3 +108,7 @@
 Посчитать, сколько раз встречается определенная цифра в введенной последовательности чисел. Количество вводимых чисел и цифра, которую необходимо посчитать, задаются вводом с клавиатуры.
 
 ####[Решение](http://jsfiddle.net/gh/get/library/pure/vlad-vs/jsPg/tree/master/homeWork/03_NestedLoops_3_CountNumbers/)
+
+
+###Sotr
+####([Решение](http://jsfiddle.net/gh/get/library/pure/vlad-vs/jsPg/tree/master/homeWork/sortBuble/))

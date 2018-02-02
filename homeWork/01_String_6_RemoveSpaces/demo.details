@@ -1,6 +1,6 @@
 ---
- name: Polindrom
- description: Write polindrom
+ name: 01_String_6_RemoveSpaces
+ description:
  authors:
    - Vlad Semenov
  resources:

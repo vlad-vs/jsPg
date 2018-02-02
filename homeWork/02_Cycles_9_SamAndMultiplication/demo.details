@@ -1,6 +1,6 @@
 ---
- name: Polindrom
- description: Write polindrom
+ name: 02_Cycles_9_SamAndMultiplication
+ description:
  authors:
    - Vlad Semenov
  resources:

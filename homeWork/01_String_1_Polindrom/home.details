@@ -4,7 +4,7 @@
  authors:
    - Vlad Semenov
  resources:
-   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_1_Polindrom/homeWork.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_1_Polindrom/home.js
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_1_Polindrom/polindrom.css
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_1_Polindrom/polindrom.html
  normalize_css: no

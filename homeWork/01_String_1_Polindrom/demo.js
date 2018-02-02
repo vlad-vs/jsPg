@@ -7,13 +7,16 @@
 // +
 var strFromUser = prompt("Введи текст (полиндром): ").trim();
 var str = strWithoutSpacesFun(strFromUser);
+var polindrom;
 
+// if (polindromFun(str)) {
+//     alert('Полиндром!');
+// } else {
+//     alert('Не полиндром!');
+// }
 
-if (polindromFun(str)) {
-    alert('Полиндром!');
-} else {
-    alert('Не полиндром!');
-}
+polindrom = (polindromFun(str)) ? 'Полиндром!' : 'Не полиндром!';
+alert(polindrom);
 
 // param: string
 // return: boolean

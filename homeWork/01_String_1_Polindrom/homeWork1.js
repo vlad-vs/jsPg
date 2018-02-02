@@ -5,15 +5,15 @@
 //
 // доход, кабак, заказ, мадам, шалаш, комок, кашак
 // +
-var strFromUser = "ot a t   o";
+var strFromUser = prompt("Введи полиндром/число: ").trim();
 var str = strWithoutSpacesFun(strFromUser);
 
 alert(str);
 
 if (polindromFun(str)) {
-    alert('Yes');
+    alert('Полиндром!');
 } else {
-    alert('no');
+    alert('Не полиндром!');
 }
 
 // param: string

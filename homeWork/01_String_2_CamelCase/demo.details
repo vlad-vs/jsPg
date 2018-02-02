@@ -1,0 +1,10 @@
+---
+ name: CamelCase
+ description:
+ authors:
+   - Vlad Semenov
+ resources: no
+
+ normalize_css: no
+
+ ...

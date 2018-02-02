@@ -4,7 +4,7 @@
  authors:
    - Vlad Semenov
  resources:
-   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_4_TableASCII/home.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_4_TableASCII/demo.js
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_4_TableASCII/home.css
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_4_TableASCII/home.html
  normalize_css: no

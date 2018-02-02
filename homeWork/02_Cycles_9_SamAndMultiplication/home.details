@@ -4,7 +4,7 @@
  authors:
    - Vlad Semenov
  resources:
-   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_9_SamAndMultiplication/home.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_9_SamAndMultiplication/demo.js
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_9_SamAndMultiplication/home.css
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_9_SamAndMultiplication/home.html
  normalize_css: no

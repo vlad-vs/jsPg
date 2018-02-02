@@ -4,7 +4,7 @@
  authors:
    - Vlad Semenov
  resources:
-   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_7_NumbersByStep/home.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_7_NumbersByStep/demo.js
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_7_NumbersByStep/home.css
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_7_NumbersByStep/home.html
  normalize_css: no

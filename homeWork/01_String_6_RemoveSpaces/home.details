@@ -4,7 +4,7 @@
  authors:
    - Vlad Semenov
  resources:
-   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_6_RemoveSpaces/home.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_6_RemoveSpaces/demo.js
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_6_RemoveSpaces/home.css
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_6_RemoveSpaces/home.html
  normalize_css: no

@@ -1,0 +1,12 @@
+---
+ name: Polindrom
+ description: Write polindrom
+ authors:
+   - Vlad Semenov
+ resources:
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_1_Polindrom/demo.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_1_Polindrom/demo.css
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_1_Polindrom/demo.html
+ normalize_css: no
+
+ ...

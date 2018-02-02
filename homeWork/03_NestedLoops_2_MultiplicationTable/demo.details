@@ -1,0 +1,12 @@
+---
+ name: Polindrom
+ description: Write polindrom
+ authors:
+   - Vlad Semenov
+ resources:
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/03_NestedLoops_2_MultiplicationTable/demo.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/03_NestedLoops_2_MultiplicationTable/demo.css
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/03_NestedLoops_2_MultiplicationTable/demo.html
+ normalize_css: no
+
+ ...

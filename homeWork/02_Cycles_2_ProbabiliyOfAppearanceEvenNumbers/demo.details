@@ -1,0 +1,12 @@
+---
+ name: Polindrom
+ description: Write polindrom
+ authors:
+   - Vlad Semenov
+ resources:
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_2_ProbabiliyOfAppearanceEvenNumbers/demo.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_2_ProbabiliyOfAppearanceEvenNumbers/demo.css
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_2_ProbabiliyOfAppearanceEvenNumbers/demo.html
+ normalize_css: no
+
+ ...

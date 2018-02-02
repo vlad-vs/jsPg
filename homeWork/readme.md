@@ -110,7 +110,8 @@
 ####[Решение](http://jsfiddle.net/gh/get/library/pure/vlad-vs/jsPg/tree/master/homeWork/03_NestedLoops_3_CountNumbers/)
 
 
-###Sotr <br/>
-[Решение] [id1]
+###Sotr
 
-[id1]:http://jsfiddle.net/gh/get/library/pure/vlad-vs/jsPg/tree/master/homeWork/sortBuble/
+[Решение]
+
+[Решение]:http://jsfiddle.net/gh/get/library/pure/vlad-vs/jsPg/tree/master/homeWork/sortBuble/

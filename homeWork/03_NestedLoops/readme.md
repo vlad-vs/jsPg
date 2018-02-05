@@ -15,3 +15,5 @@
 
 ### 4. Найти число с максимальной суммой цифр
 Среди натуральных чисел, которые были введены, найти наибольшее по сумме цифр. Вывести на экран это число и сумму его цифр.
+
+[Решение](http://jsfiddle.net/gh/get/library/pure/vlad-vs/jsPg/tree/master/homeWork/03_NestedLoops/03_NestedLoops_4_ MaxSumOfNumbers/)

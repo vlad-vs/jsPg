@@ -1,5 +1,11 @@
+Objects
 
+var user {}
 
+Булева алгебра
 
+'use strict'; - строгая проверка кода;
 
+SOLID
 
+Prototype, proto

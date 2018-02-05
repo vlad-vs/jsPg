@@ -1,0 +1,12 @@
+---
+ name: 02_Cycles_5_EvenAndNotEavenNumbers
+ description:
+ authors:
+   - Vlad Semenov
+ resources:
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_5_EvenAndNotEavenNumbers/demo.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_5_EvenAndNotEavenNumbers/demo.css
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_5_EvenAndNotEavenNumbers/demo.html
+ normalize_css: no
+
+ ...

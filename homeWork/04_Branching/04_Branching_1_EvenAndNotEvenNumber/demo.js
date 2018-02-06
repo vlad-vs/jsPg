@@ -27,4 +27,3 @@ function isEaven(num) {
     }
     return even;
 }
-

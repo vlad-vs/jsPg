@@ -5,43 +5,44 @@
 //
 // доход, кабак, заказ, мадам, шалаш, комок, кашак
 // +
-var strFromUser = prompt("Введи текст (полиндром): ").trim();
-var str = strWithoutSpacesFun(strFromUser);
-var polindrom;
 
-// if (polindromFun(str)) {
-//     alert('Полиндром!');
-// } else {
-//     alert('Не полиндром!');
-// }
+(function run() {
+    let strFromUser = prompt("Введи текст (полиндром): ").trim();
+    let str = getStringWithoutSpacesFun(strFromUser);
+    let polindrom;
+    let textHtml;
 
-polindrom = (polindromFun(str)) ? 'Полиндром!' : 'Не полиндром!';
-alert(polindrom);
+    polindrom = (isPolindromFun(str)) ? 'полиндром!' : 'не полиндром!';
+
+    textHtml = '<div> Это ' + polindrom + '</div>';
+
+    document.body.innerHTML = textHtml
+})();
 
 // param: string
 // return: boolean
-function polindromFun(paramStr) {
-    var polindrom = true;
-    var counter = 0;
-    var count = paramStr.length / 2;
+function isPolindromFun(paramStr) {
+    let bool = true;
+    let counter = 0;
+    let count = paramStr.length / 2;
 
-    for (var j = 0; j < str.length; ++j) {
+    for (let j = 0; j < paramStr.length; ++j) {
         if (paramStr[j] === paramStr[paramStr.length - j - 1]) {
             counter = counter + 1;
             if (counter === count) {
                 break;
             }
         }
-        else polindrom = false;
+        else bool = false;
     }
-    return polindrom;
+    return bool;
 }
 
 // param: string
 // return: string without spaces
-function strWithoutSpacesFun(stringWithSpaces) {
-    var strWithoutSpases = "";
-    for (var i = 0; i < stringWithSpaces.length; ++i) {
+function getStringWithoutSpacesFun(stringWithSpaces) {
+    let strWithoutSpases = "";
+    for (let i = 0; i < stringWithSpaces.length; ++i) {
         if (stringWithSpaces[i] !== " ") {
             strWithoutSpases = strWithoutSpases + stringWithSpaces[i];
         }

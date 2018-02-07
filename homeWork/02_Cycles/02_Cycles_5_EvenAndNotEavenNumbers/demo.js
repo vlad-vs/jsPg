@@ -1,15 +1,27 @@
 //  Посчитать четные и нечетные цифры числа ========================
 // +
-var info = '3453456260';
-var evenNumber = '';
-var notEvenNumber = '';
+(function run() {
+    let strFromUser = getStringFromUser('Введи число');
+    let evenNumber = '';
+    let notEvenNumber = '';
 
-for (var i = 0; i < info.length; ++i) {
-	if ((info[i] % 2) === 0) {
-			evenNumber = evenNumber + info[i];
-	} else {
-		notEvenNumber = notEvenNumber + info[i]
-	}
+    for (let i = 0; i < strFromUser.length; ++i) {
+        if ((strFromUser[i] % 2) === 0) {
+            evenNumber = evenNumber + strFromUser[i];
+        } else {
+            notEvenNumber = notEvenNumber + strFromUser[i]
+        }
+    }
+
+    document.body.innerHTML =
+        '<div>' + 'Строка от юзера = ' + strFromUser + ' Число цифр = ' + strFromUser.length + '</div>'
+        + '<br>' +
+        '<div>' + 'Четные = ' + evenNumber + ' Число цифр = ' + evenNumber.length + '</div>'
+        + '<br>' +
+        '<div>' + 'Нечетные = ' + notEvenNumber + ' Число цифр = ' + notEvenNumber.length + '</div>';
+})();
+
+
+function getStringFromUser(text) {
+    return prompt(text).trim();
 }
-alert('Четные= ' + evenNumber + "\n" +
-    'неЧетные= ' + notEvenNumber);

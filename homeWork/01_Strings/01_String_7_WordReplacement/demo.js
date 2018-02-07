@@ -1,22 +1,28 @@
 // Замена подстроки
 // Найти в строке указанную подстроку и заменить ее на новую. Строку, ее подстроку для замены и новую подстроку вводит пользователь.
 
-// +
 
-var strFromUser = prompt("Введи строку: ").trim();
+(function run() {
+    let strFromUser = getStringFromUser('Введи строку: ');
 
-var wordToRaplace = prompt("Введи подстроку: ").trim();
+    let wordToRaplace = getStringFromUser('Введи подстроку: ');
 
-var newWord = prompt("Введи новую подстроку: ").trim();
+    let newWord = getStringFromUser('Введи новую подстроку: ');
 
-var firstIndex = strFromUser.indexOf(wordToRaplace);
+    let firstIndex = strFromUser.indexOf(wordToRaplace);
 
-var numberLetters = wordToRaplace.length;
+    let numberLetters = wordToRaplace.length;
 
-var str1 = strFromUser.substring(0,(firstIndex)).trim();
+    let firstPartOfString = strFromUser.substring(0,(firstIndex)).trim();
 
-var str3 = strFromUser.substring(firstIndex + numberLetters).trim();
+    let secondPartOfString = strFromUser.substring(firstIndex + numberLetters).trim();
 
-var newString = (str1 +" "+ newWord +" "+ str3).trim();
+    let newString = (firstPartOfString +" "+ newWord +" "+ secondPartOfString).trim();
 
-alert(newString);
+    document.body.innerHTML = 'Новая строка: ' + newString;
+})();
+
+
+function getStringFromUser(text) {
+    return prompt(text).trim();
+}

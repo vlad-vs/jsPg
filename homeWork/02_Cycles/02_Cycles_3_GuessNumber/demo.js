@@ -3,25 +3,26 @@
 // После каждой неудачной попытки должно сообщаться больше или меньше введенное пользователем число, чем то, что загадано.
 // Если за 10 попыток число не отгадано, то вывести загаданное число.
 // +
-var guessNumber = (Math.random() * 100).toFixed();
 
-for (var i = 0; i < 10; ++i) {
-    var numberFromUser = Number(prompt(
-        'Угадай число от 1 до 100' + '\n' +
-        'Попытка: '+ (i + 1) + ' из 10' +  '\n' +
-        'Введи цифру : ').trim());
-    if (guessNumFun(numberFromUser)) {
-        alert('Ты угадал!!!');
-        break;
-    } else if (i === 9 ) {
-        alert(
-            'Конец игры' + '\n' +
-            'Число = ' + guessNumber);
+let guessNumber = rundomGenerator();
+
+(function run() {
+    for (let i = 0; i < 10; ++i) {
+        let userNum = getNumberFromUser(i);
+        if (isGuessNumberFun(userNum)) {
+            alert('Ты угадал!!!');
+            break;
+        } else if (i === 9 ) {
+            alert(
+                'Конец игры' + '\n' +
+                'Число = ' + guessNumber);
+        }
     }
-}
+})();
 
-function guessNumFun(paramNumber) {
-    var bool = false;
+
+function isGuessNumberFun(paramNumber) {
+    let bool = false;
     if (paramNumber < guessNumber) {
         alert("Больше");
         return bool;
@@ -32,4 +33,15 @@ function guessNumFun(paramNumber) {
         bool = true;
         return bool;
     }
+}
+
+function rundomGenerator() {
+    return (Math.random() * 100).toFixed();
+}
+
+function getNumberFromUser(tryNumber) {
+    return Number(prompt(
+        'Угадай число от 1 до 100' + '\n' +
+        'Попытка: '+ (tryNumber + 1) + ' из 10' +  '\n' +
+        'Введи цифру : ').trim());
 }

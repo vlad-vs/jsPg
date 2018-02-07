@@ -2,7 +2,13 @@
 // Вводится строка, состоящая из слов, разделенных пробелами. Требуется посчитать количество слов в ней.
 //+
 
-var strFromUser = 'hello world'.trim();
-var arrWords = strFromUser.split(' ');
-alert(arrWords.length);
+(function run() {
+    let strFromUser = getStringFromUser();
+    let arrWords = strFromUser.split(' ');
+    document.body.innerHTML = 'Количество слов ' + arrWords.length;
+})();
 
+
+function getStringFromUser() {
+    return prompt('Введи строку').trim();
+}

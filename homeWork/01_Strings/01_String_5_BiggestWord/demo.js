@@ -3,16 +3,24 @@
 // Случай, когда самых длинных слов может быть несколько, не обрабатывать.
 //+
 
-var biggest = '';
-var strFromUser = 'one two three four';
-var arrWords = strFromUser.split(' ');
 
-var tempNumber = 0;
+(function run() {
+    let biggestWord = '';
+    let strFromUser = getStringFromUser();
+// let strFromUser = 'one two three four';
+    let arrWords = strFromUser.split(' ');
 
-for (var i = arrWords.length - 1; i >= 0 ; --i) {
-	if (tempNumber <= arrWords[i].length) {
-			tempNumber = arrWords[i].length;
-       		biggest = arrWords[i];
-	}
+    let tempNumber = 0;
+
+    for (let i = arrWords.length - 1; i >= 0; --i) {
+        if (tempNumber <= arrWords[i].length) {
+            tempNumber = arrWords[i].length;
+            biggestWord = arrWords[i];
+        }
+    }
+    document.body.innerHTML = 'Слово: "' + biggestWord + '" Количество букв: ' + biggestWord.length;
+})();
+
+function getStringFromUser() {
+    return prompt('Введи строку').trim();
 }
-alert('word: ' + biggest + " wordLettrs: " + biggest.length);

@@ -9,7 +9,6 @@
     document.body.innerHTML = getCamelCaseString(arrWords);
 })();
 
-
 function getStringFromUser() {
     return prompt('Введи строку на английском!').trim();
 }

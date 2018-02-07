@@ -3,15 +3,21 @@
 // максимум 35, шаг 5, то вывод должен быть таким: 10 15 20 25 30 35. Минимум, максимум и шаг указываются
 // пользователем (считываются с клавиатуры).
 // +
-var min = Number(prompt("Введи минимум:").trim());
-var max = Number(prompt("Введи максимум:").trim());
 
-var step = Number(prompt("Введи шаг:").trim());
+(function run() {
+    let min = getStringFromUser('Введи число (начало диапазона):')
+    let max = getStringFromUser('Введи число (конец диапазона):')
+    let step = getStringFromUser('Введи шаг:')
 
-var result = '';
+    let result = '';
 
-for (min; min <= max; min = min + step) {
-    result = result + " " + min;
+    for (min; min <= max; min = min + step) {
+        result = result + " " + min;
+    }
+    document.body.innerHTML = result;
+})();
+
+function getStringFromUser(text) {
+    return Number(prompt(text).trim());
 }
 
-alert(result);

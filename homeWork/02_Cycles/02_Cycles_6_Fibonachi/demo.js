@@ -1,15 +1,19 @@
 // Ряд Фибоначчи ====================================
 // +
-var fromUser = prompt("Введи число длинны последовательности Фибоначи: ").trim();
 
-var first = 1;
-var second = 1;
-var sum = 0;
-var str = '';
-for (var i = 3; i <= fromUser; ++i) {
-    sum = first + second;
-    first = second;
-    second = sum;
-    str = str + String(sum);
-}
-alert('1' + '1' + String(str));
+(function run() {
+    let fromUser = prompt("Введи число длинны последовательности Фибоначи: ").trim();
+
+    let first = 1;
+    let second = 1;
+    let sum = 0;
+    let str = '';
+    for (let i = 3; i <= fromUser; ++i) {
+        sum = first + second;
+        first = second;
+        second = sum;
+        str = str + String(sum);
+    }
+    document.body.innerHTML = '1' + '1' + String(str)
+})();
+

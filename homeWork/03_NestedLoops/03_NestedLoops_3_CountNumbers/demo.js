@@ -4,16 +4,16 @@
 // +
 
 
-var strNumbers = prompt("Введи число:").trim();
+let strNumbers = prompt("Введи число:").trim();
 // var strNumbers = '1222345677278';
-var numToCount = Number(prompt("Введи цифру : ").trim());
+let numToCount = Number(prompt("Введи цифру : ").trim());
 // var numToCount = 2;
-var countNumbers = 0;
+let countNumbers = 0;
 
 
-for (var i = 1; i < strNumbers.length; ++i) {
-    if (Number(strNumbers[i]) === numToCount){
-        ++ countNumbers;
+for (let i = 1; i < strNumbers.length; ++i) {
+    if (Number(strNumbers[i]) === numToCount) {
+        ++countNumbers;
     }
 }
 alert('Цифра ' + numToCount + '\n' +

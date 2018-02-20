@@ -1,5 +1,15 @@
 
 
 
+Object.defineProperties ()
+
+debugger
+Console arguments
+
+Call - аргументы через запятую  Apply - аргументы через массив
+
+Object.prototype.toString.call(null)
+
+Array.prototype.slice.call(arguments)
 
 

@@ -1,0 +1,13 @@
+.body{
+	font-size: 20px;
+	color: white;
+	background-color: black;
+	padding-top: 2%;
+}
+table,td{
+	border: 2px solid white;
+}
+td{
+	margin: 0px;
+	padding: 0px;
+}

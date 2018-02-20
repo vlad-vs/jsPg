@@ -1,0 +1,12 @@
+---
+ name:
+ description:
+ authors:
+   - Vlad Semenov
+ resources:
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/_______________/demo.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/_______________/demo.css
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/_______________/demo.html
+ normalize_css: no
+
+ ...

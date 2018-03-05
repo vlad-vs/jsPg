@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style type="text/css">
+        /*
+        generate pixel BASE64
+        http://png-pixel.com/*/
+
+        #canvas {
+            border: 1px solid #000;
+            cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="), auto;
+            width: 640px;
+            height: 480px;
+
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas">
+    Your browser doesnot work with canvas
+</canvas>
+
+<textarea name="" id="textArea" cols="30" rows="10"></textarea>
+<script type="text/javascript">
+
+
+    function drawRectCenter(posX, posY, rectWidth, rectHeight) {
+        ctx.fillRect(
+            posX - rectWidth / 2,
+            posY - rectHeight / 2,
+            rectWidth,
+            rectHeight
+        );
+    }
+
+    function drawRects() {
+        ctx.save();
+        //Заполним его прямоугольниками
+        ctx.fillStyle = 'rgba(0, 0, 255, 0.5)';
+        ctx.fillRect(10, 10, 150, 100);
+        //RGBA stands for red green blue alpha
+        ctx.fillStyle = 'rgba(0, 255, 0, 0.5)';
+        ctx.fillRect(30, 30, 150, 100);
+
+        ctx.restore();
+    }
+
+    function drawCircle(x, y) {
+        ctx.save();
+        var circle = new Path2D();
+        circle.arc(x, y, 25, 0, 2 * Math.PI);
+        ctx.fillStyle = 'rgba(100, 100, 100, 1)';
+        ctx.fill(circle);
+        ctx.restore();
+
+    }
+
+
+    var canvas = document.getElementById('canvas');
+    //Два обязательных отрибута width и height
+    canvas.width = 640;
+    canvas.height = 480;
+    //возвращает контекст рисования на холсте
+    var ctx = canvas.getContext('2d');
+
+
+    function clear() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    var cursor = {
+        x: 0,
+        y: 0
+    };
+
+
+    function render() {
+        clear();
+        drawRects();
+
+        drawCircle(cursor.x, cursor.y);
+
+        drawRectRunner();
+    }
+
+
+    render();
+
+    var rectX = 0;
+
+    function drawRectRunner() {
+        ctx.save();
+        ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+        drawRectCenter(canvas.width / 2 + rectX, canvas.height / 2, 150, 100);
+        ctx.restore();
+    }
+
+    canvas.addEventListener('mousemove', function (event) {
+        //Больше информации по методу learn.javascript.ru/coordinates
+        var rect = canvas.getBoundingClientRect();
+        cursor.x = event.clientX - rect.left;
+        cursor.y = event.clientY - rect.top;
+
+        var strOut = event.clientX + ':' + event.clientY;
+        document.getElementById('textArea').value = strOut;
+
+
+    });
+
+
+    var vector, speed = 5;
+
+    setInterval(function () {
+        if (rectX > 400) {
+            vector = -1
+        } else if (rectX < 200) {
+            vector = 1;
+        }
+
+        rectX = rectX + vector * speed;
+        render();
+
+    }, 1000 / 60);
+
+    // function updareCanvas() {
+    //     if (rectX > 400) {
+    //         vector = -1
+    //     } else if (rectX < 200) {
+    //         vector = 1;
+    //     }
+    //
+    //     rectX = rectX + vector * speed;
+    //
+    //     render();
+    //
+    //     setTimeout(updareCanvas(), 1000 / 60);
+    // }
+    //
+    // updareCanvas();
+
+</script>
+</body>
+</html>

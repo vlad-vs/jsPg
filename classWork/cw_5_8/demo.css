@@ -1,0 +1,22 @@
+.body{
+	font-size: 20px;
+	color: white;
+	background-color: black;
+	padding-top: 2%;
+}
+.normal {
+
+}
+.normal:hover {
+	background-color: lightgray;
+	transition: 0.2s ease;
+}
+.selected {
+	background-color: red;
+}
+
+input {
+	background: none;
+	border: none;
+	outline:none;
+}

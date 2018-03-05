@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style type="text/css">
+        /*
+        generate pixel BASE64
+        http://png-pixel.com/*/
+
+        #canvas {
+            border: 1px solid #000;
+            cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="), auto;
+            width: 640px;
+            height: 480px;
+
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas">
+    Your browser doesnot work with canvas
+</canvas>
+<textarea id="textAria"></textarea>
+<script type="text/javascript">
+
+    function drawRectCenter(posX, posY, rectWidth, rectHeight) {
+        ctx.fillRect(
+            posX - rectWidth / 2,
+            posY - rectHeight / 2,
+            rectWidth,
+            rectHeight
+        );
+    }
+
+    function drawRects() {
+        ctx.save();
+        //Заполним его прямоугольниками
+        ctx.fillStyle = 'rgba(0, 0, 255, 0.5)';
+        ctx.fillRect(10, 10, 150, 100);
+        //RGBA stands for red green blue alpha
+        ctx.fillStyle = 'rgba(0, 255, 0, 0.5)';
+        ctx.fillRect(30, 30, 150, 100);
+
+        ctx.restore();
+    }
+
+    function drawCircle(x, y) {
+        ctx.save();
+
+        // ctx.fillStyle = 'rgba(0, 255, 0, 0.5)';
+        // ctx.beginPath();
+        // ctx.arc(240, 200, 25, 0, 2 * Math.PI);
+        // ctx.fill();
+
+        var circle = new Path2D();
+
+        circle.arc(x, y, 25, 0, 2 * Math.PI);
+        ctx.fillStyle = 'rgba(0, 255, 0, 1)';
+        ctx.fill(circle);
+        // ctx.stroke(circle);
+
+        ctx.restore();
+    }
+
+
+    var canvas = document.getElementById('canvas');
+    //Два обязательных отрибута width и height
+    canvas.width = 640;
+    canvas.height = 480;
+    //возвращает контекст рисования на холсте
+    var ctx = canvas.getContext('2d');
+
+    drawRects();
+    ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+    drawRectCenter(canvas.width / 2, canvas.height / 2, 150, 100);
+
+    var flag = false;
+
+
+    canvas.addEventListener('mousemove', function (event) {
+        var rect = canvas.getBoundingClientRect();
+        var x = event.clientX - rect.left;
+        var y = event.clientY - rect.top;
+        document.getElementById('textAria').value = event.clientX + ':' + event.clientY;
+        if (flag) {
+            drawCircle(x, y);
+        }
+    });
+
+    canvas.addEventListener('mousedown', function (event) {
+        clear();
+        flag = true;
+    });
+
+    canvas.addEventListener('mouseup', function (event) {
+        flag = false;
+        // canvas.removeEventListener('mousemove',)
+    })
+
+    function clear() {
+        ctx.clearRect(0,0, canvas.width,canvas.height)
+    }
+
+
+</script>
+</body>
+</html>

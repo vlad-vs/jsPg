@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" type="text/css" href="demo.css">
+	<!--<script src="demo.js"></script>-->
+</head>
+<body class="body">
+<table class='table'>
+
+	<caption>How I chose to spend my money</caption>
+	<thead>
+	<tr>
+		<th>Purchase</th>
+		<th>Location</th>
+		<th>Date</th>
+		<th>Evaluation</th>
+		<th>Cost (€)</th>
+	</tr>
+	</thead>
+	<tfoot>
+	<tr>
+		<td colspan="4">SUM</td>
+		<td>118</td>
+	</tr>
+	</tfoot>
+	<tbody class="tBody">
+	<tr>
+		<td>Haircut</td>
+		<td>Hairdresser</td>
+		<td>12/09</td>
+		<td>Great idea</td>
+		<td>30</td>
+	</tr>
+	<tr>
+		<td>Lasagna</td>
+		<td>Restaurant</td>
+		<td>12/09</td>
+		<td>Regrets</td>
+		<td>18</td>
+	</tr>
+	<tr>
+		<td>Shoes</td>
+		<td>Shoeshop</td>
+		<td>13/09</td>
+		<td>Big regrets</td>
+		<td>65</td>
+	</tr>
+	<tr>
+		<td>Toothpaste</td>
+		<td>Supermarket</td>
+		<td>13/09</td>
+		<td>Good</td>
+		<td>5</td>
+	</tr>
+	</tbody>
+</table>
+
+
+<a href="javascript:run1()"> Sort 1 to N </a>
+
+<br>
+
+<a href="javascript:run2()"> Sort N to 1 </a>
+
+<br>
+
+<a href="#" onclick="myClick(event)"> Click </a>
+
+<script type="text/javascript">
+    function run1() {
+        let table = document.querySelector('.table > tbody');
+        let rows = document.querySelectorAll('.table > tbody > tr');
+
+        let arr = Array.prototype.slice.call(rows);
+
+        arr.sort(function (nodeA, nodeB) {
+            return nodeA.lastElementChild.innerHTML - nodeB.lastElementChild.innerHTML;
+        });
+
+        arr.forEach(function (node) {
+            table.appendChild(node);
+        });
+    }
+
+    function run2() {
+        let table = document.querySelector('.table > tbody');
+        let rows = document.querySelectorAll('.table > tbody > tr');
+
+        let arr = Array.prototype.slice.call(rows);
+
+        arr.sort(function (nodeA, nodeB) {
+            return nodeB.lastElementChild.innerHTML - nodeA.lastElementChild.innerHTML;
+        });
+
+        arr.forEach(function (node) {
+            table.appendChild(node);
+        });
+    }
+
+</script>
+
+<script type="text/javascript">
+    
+    // window.myClick = function () {
+    document.myClick = function () {
+            let table = document.querySelector('.table > tbody');
+            let rows = document.querySelectorAll('.table > tbody > tr');
+
+            let arr = Array.prototype.slice.call(rows);
+
+            arr.sort(function (nodeA, nodeB) {
+                return nodeB.lastElementChild.innerHTML - nodeA.lastElementChild.innerHTML;
+            });
+
+            arr.forEach(function (node) {
+                table.appendChild(node);
+            });
+    }
+    
+</script>
+
+</body>
+</html>

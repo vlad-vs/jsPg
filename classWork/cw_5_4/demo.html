@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" type="text/css" href="demo.css">
+	<!--<script src="demo.js"></script>-->
+</head>
+<body class="body">
+
+<div id="id1" class="box1">box1</div>
+<div id="id2" class="box2">box2</div>
+<div id="id3" class="box3">box3</div>
+
+
+<script type="text/javascript">
+
+	function createDiv(text) {
+        let node = document.createElement('div');
+        node.innerHTML = text;
+        return node;
+    }
+
+    let box1 = document.querySelector('.box1');
+    let box3 = document.querySelector('.box3');
+    // createDiv('TEXT Hello World');
+    let newNode = createDiv('TEXT Hello World');
+    // box1.insertBefore(newNode,box1.firstChild);
+
+    let after = function (nodeCurrent, node) {
+        nodeCurrent.parentNode.insertBefore(node,nodeCurrent.nextSibling)
+    };
+
+    after(box1,newNode);
+
+    let node2 = newNode.cloneNode(true);
+
+    after(box3,node2);
+
+</script>
+
+</body>
+</html>

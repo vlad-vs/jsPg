@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="demo.css">
+</head>
+<body>
+<form>
+    <table class='table-spend-my-money'>
+        <caption>How I chose to spend my money</caption>
+        <thead>
+        <tr>
+            <th data-sortable="true" data-sort="desc" data-type="string">Purchase</th>
+            <th data-sortable="true" data-type="string">Location</th>
+            <th data-sortable="true" data-type="string">Date</th>
+            <th data-sortable="true" data-type="string">Evaluation</th>
+            <th data-sortable="true" data-type="number">Cost (€)</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <td colspan="4">SUM</td>
+            <td>118</td>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr class="normal">
+            <td><input onchange="a_value()" type="text" value="Haircut"></td>
+            <td><input onchange="a_value()" type="text" value="Hairdresser"></td>
+            <td><input onchange="a_value()" type="text" value="12/09"></td>
+            <td><input onchange="a_value()" type="text" value="Great idea"></td>
+            <td><input onchange="a_value()" type="number" value="30"></td>
+        </tr>
+        <tr class="normal">
+            <td><input onchange="a_value()" type="text" value="Lasagna"></td>
+            <td><input onchange="a_value()" type="text" value="Restaurant"></td>
+            <td><input onchange="a_value()" type="text" value="12/09"></td>
+            <td><input onchange="a_value()" type="text" value="Regrets"></td>
+            <td><input onchange="a_value()" type="number" value="18"></td>
+        </tr>
+        <tr class="normal">
+            <td><input onchange="a_value()" type="text" value="Shoes"></td>
+            <td><input onchange="a_value()" type="text" value="Shoeshop"></td>
+            <td><input onchange="a_value()" type="text" value="13/09"></td>
+            <td><input onchange="a_value()" type="text" value="Big regrets"></td>
+            <td><input onchange="a_value()" type="number" value="65"></td>
+        </tr>
+        <tr class="normal">
+            <td><input onchange="a_value()" type="text" value="Toothpaste"></td>
+            <td><input onchange="a_value()" type="text" value="Supermarket"></td>
+            <td><input onchange="a_value()" type="text" value="13/09"></td>
+            <td><input onchange="a_value()" type="text" value="Good"></td>
+            <td><input onchange="a_value()" type="number" value="5"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<p>
+    Click on header of table to sort rows.
+    <strong>Work only last element "COST"</strong>
+</p>
+<script type="text/javascript">
+    function toArray(list) {
+        return Array.prototype.slice.call(list);
+    }
+
+    // function compareNumeric(nodeA, nodeB) {
+    //     return nodeA.children[index].innerHTML - nodeB.children[index].innerHTML;
+    // }
+
+    function getValue(o) {
+        return o.value;
+    }
+
+
+    function chengeByIndex(cell, cellIndex) {
+        console.log(cell.getAttribute("value"));
+        let val = getValue(cell);
+        cell.setAttribute("value",val);
+    }
+
+    function sortByIndex(table, index, type, atrib) {
+        let sortedArr;
+        let tBody = table.tBodies[0];
+
+        // let fistInRow = tBody.rows.item(0).children[index].innerHTML;
+        if (type === 'number' && atrib === 'desc') {
+            sortedArr = toArray(tBody.rows)
+                .sort(function (nodeA, nodeB) {
+                    return nodeA.cells[index].children[0].getAttribute("value") - nodeB.cells[index].children[0].getAttribute("value");
+                });
+        }
+        if (type === 'string' && atrib === 'desc') {
+            sortedArr = toArray(tBody.rows).sort(function (nodeA, nodeB) {
+                return nodeA.cells[index].children[0].getAttribute("value") > nodeB.cells[index].children[0].getAttribute("value");
+            });
+        }
+        if (type === 'number' && atrib === 'asc') {
+            sortedArr = toArray(tBody.rows)
+                .sort(function (nodeA, nodeB) {
+                    return nodeB.cells[index].children[0].getAttribute("value") - nodeA.cells[index].children[0].getAttribute("value");
+                });
+        }
+        if (type === 'string' && atrib === 'asc') {
+            sortedArr = toArray(tBody.rows).sort(function (nodeA, nodeB) {
+                return nodeB.cells[index].children[0].getAttribute("value") > nodeA.cells[index].children[0].getAttribute("value");
+            });
+        }
+
+        sortedArr.forEach(function (node) {
+            tBody.appendChild(node);
+        });
+    }
+
+    document
+        .querySelector('.table-spend-my-money')
+        .addEventListener('click', function (event) {
+            let cellIndex = event.target.cellIndex;
+            let atr = document.querySelector('.table-spend-my-money > thead > tr > th').getAttribute("data-sort");
+
+            let elem = document.querySelector('.table-spend-my-money > thead > tr > th');
+
+            if (event.target.getAttribute('data-sortable') === 'true'
+                && event.target.getAttribute('data-type') === 'string') {
+                sortByIndex(this, cellIndex, 'string', atr);
+                atr = (atr === 'asc') ? 'desc' : 'asc';
+                elem.setAttribute("data-sort", atr);
+            }
+
+            if (event.target.getAttribute('data-sortable') === 'true'
+                && event.target.getAttribute('data-type') === 'number') {
+                sortByIndex(this, cellIndex, 'number', atr);
+                atr = (atr === 'asc') ? 'desc' : 'asc';
+                elem.setAttribute("data-sort", atr);
+            }
+        });
+
+    document
+        .querySelector('.table-spend-my-money > tbody')
+        .addEventListener('click', function (event) {
+            let cellIndex = event.target.cellIndex;
+            let elem = event.target;
+            elem.parentNode.parentNode.className = "selected";
+            chengeByIndex(elem, cellIndex);
+        });
+
+</script>
+</body>
+</html>

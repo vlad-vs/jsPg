@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style type="text/css">
+        .content > div {
+            width: 100px;
+            height: 150px;
+            border: 1px solid black;
+            font-size: 22px;
+            background: #eee;
+            /*font-size: 0px;*/
+            display: inline-block;
+        }
+
+        .content {
+            white-space: nowrap;
+            font-size: 0px;
+        }
+
+        #carusel {
+
+            width: 300px;
+            border: 1px solid black;
+            /*overflow: hidden;*/
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+
+<div id="carusel">
+    <div class="content">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>04</div>
+        <div>05</div>
+        <div>06</div>
+        <div>07</div>
+        <div>08</div>
+        <div>09</div>
+        <div>10</div>
+    </div>
+</div>
+<input id="scrolPos" type="text">
+
+<!--<textarea name="" id="textArea" cols="30" rows="10"></textarea>-->
+<script type="text/javascript">
+    // function coruselUpdate() {
+    //    var corousel = document.querySelector('#carusel');
+    //     corousel.scrollLeft +=1;
+    //     setTimeout(coruselUpdate,1000)
+    // }
+
+    var s = 2;
+    var flag = false;
+    requestAnimationFrame(function coruselUpdate(time) {
+
+        var corousel = document.querySelector('#carusel');
+        console.log(corousel.scrollLeft.valueOf());
+
+        if (flag){
+            corousel.scrollLeft = corousel.scrollLeft + s
+        }
+        else {
+            corousel.scrollLeft = corousel.scrollLeft - s;
+        }
+
+        // if (corousel.scrollLeft > 735 ){
+        //     flag = false
+        // }
+
+        requestAnimationFrame(coruselUpdate);
+    })
+
+    document.addEventListener("DOMContentLoader", function (event) {
+        coruselUpdate();
+    })
+
+
+</script>
+</body>
+</html>

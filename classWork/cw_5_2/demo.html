@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" type="text/css" href="demo.css">
+	<!--<script src="demo.js"></script>-->
+</head>
+<body class="body">
+
+<div id="id1" class="box1">box1</div>
+<div id="id2" class="box">box2</div>
+<div id="id3" class="box">box3</div>
+
+
+<script type="text/javascript">
+
+    let box1 = document.querySelector('.box1');
+	let node = document.createElement('div');
+	node.innerHTML = '<a href="#">Link_1</a>';
+    // node.innerText = '<a href="#">Link_1</a>';
+
+    box1.appendChild(node);
+</script>
+
+</body>
+</html>

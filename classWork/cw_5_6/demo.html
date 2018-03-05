@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table class='table-spend-my-money'>
+    <caption>How I chose to spend my money</caption>
+    <thead>
+    <tr>
+        <th data-sortable="true" data-sort="desc" data-type="string">Purchase</th>
+        <th data-sortable="true" data-type="string">Location</th>
+        <th data-sortable="true" data-type="string">Date</th>
+        <th data-sortable="true" data-type="string">Evaluation</th>
+        <th data-sortable="true" data-type="number">Cost (€)</th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+        <td colspan="4">SUM</td>
+        <td>118</td>
+    </tr>
+    </tfoot>
+    <tbody>
+    <tr>
+        <td>Haircut</td>
+        <td>Hairdresser</td>
+        <td>12/09</td>
+        <td>Great idea</td>
+        <td>30</td>
+    </tr>
+    <tr>
+        <td>Lasagna</td>
+        <td>Restaurant</td>
+        <td>12/09</td>
+        <td>Regrets</td>
+        <td>18</td>
+    </tr>
+    <tr>
+        <td>Shoes</td>
+        <td>Shoeshop</td>
+        <td>13/09</td>
+        <td>Big regrets</td>
+        <td>65</td>
+    </tr>
+    <tr>
+        <td>Toothpaste</td>
+        <td>Supermarket</td>
+        <td>13/09</td>
+        <td>Good</td>
+        <td>5</td>
+    </tr>
+    </tbody>
+</table>
+<p>
+    Click on header of table to sort rows.
+    <strong>Work only last element "COST"</strong>
+</p>
+<script type="text/javascript">
+    function toArray(list) {
+        return Array.prototype.slice.call(list);
+    }
+
+    // function compareNumeric(nodeA, nodeB) {
+    //     return nodeA.children[index].innerHTML - nodeB.children[index].innerHTML;
+    // }
+
+    function sortByIndex(table, index, type, atrib) {
+        let sortedArr;
+        let tBody = table.tBodies[0];
+        // let fistInRow = tBody.rows.item(0).children[index].innerHTML;
+        if (type === 'number' && atrib === 'desc') {
+            sortedArr = toArray(tBody.rows)
+                .sort(function (nodeA, nodeB) {
+                    return nodeA.children[index].innerHTML - nodeB.children[index].innerHTML;
+                });
+        }
+        if (type === 'string' && atrib === 'desc') {
+            sortedArr = toArray(tBody.rows).sort(function (nodeA, nodeB) {
+                return nodeA.children[index].innerHTML > nodeB.children[index].innerHTML;
+            });
+        }
+        if (type === 'number' && atrib === 'asc') {
+            sortedArr = toArray(tBody.rows)
+                .sort(function (nodeA, nodeB) {
+                    return nodeB.children[index].innerHTML - nodeA.children[index].innerHTML;
+                });
+        }
+        if (type === 'string' && atrib === 'asc') {
+            sortedArr = toArray(tBody.rows).sort(function (nodeA, nodeB) {
+                return nodeB.children[index].innerHTML > nodeA.children[index].innerHTML;
+            });
+        }
+
+        sortedArr.forEach(function (node) {
+            tBody.appendChild(node);
+        });
+    }
+
+    document
+        .querySelector('.table-spend-my-money')
+        .addEventListener('click', function (event) {
+            //event.target - element was clicked
+            if (event.target.getAttribute('data-sortable') === 'true'
+                && event.target.getAttribute('data-type') === 'string') {
+                let cellIndex = event.target.cellIndex;
+                let atr = document.querySelector('.table-spend-my-money > thead > tr > th').getAttribute("data-sort");
+                let elem = document.querySelector('.table-spend-my-money > thead > tr > th');
+
+
+                sortByIndex(this, cellIndex, 'string', atr);
+                atr = (atr === 'asc') ? 'desc' : 'asc';
+                elem.setAttribute("data-sort", atr);
+            }
+
+            if (event.target.getAttribute('data-sortable') === 'true'
+                && event.target.getAttribute('data-type') === 'number') {
+                let cellIndex = event.target.cellIndex;
+                let atr = document.querySelector('.table-spend-my-money > thead > tr > th').getAttribute("data-sort");
+                let elem = document.querySelector('.table-spend-my-money > thead > tr > th');
+
+
+                sortByIndex(this, cellIndex, 'number', atr);
+                atr = (atr === 'asc') ? 'desc' : 'asc';
+                elem.setAttribute("data-sort", atr);
+            }
+        });
+
+    // function showRow(obj) {
+    //     var tr = getParentNode(obj, 'TR');
+    //     if(tr) {
+    //         alert(tr.rowIndex)
+    //     }
+
+    document
+        .querySelector('.table-spend-my-money > tbody')
+        .addEventListener('click', function (event) {
+            let cellIndex = event.target.cellIndex;
+            let elem = event.target;
+            let tr = elem.parentNode;
+            chengeByIndex(tr, cellIndex);
+        });
+
+    function chengeByIndex(tr,cellIndex) {
+        let arr = toArray(tr.children);
+        arr[cellIndex].innerHTML = '1';
+
+
+        // console.log(arr)
+        // console.log(arr[2])
+        // console.log(arr[0][cellIndex])
+
+        // arr.forEach(function (node,n,a) {
+        //     console.log(node);
+        //     node.children[cellIndex].innerHTML = '1';
+        //     console.log(node.children[cellIndex]);
+        //     // tBody.appendChild(node);
+        // });
+    }
+</script>
+</body>
+</html>

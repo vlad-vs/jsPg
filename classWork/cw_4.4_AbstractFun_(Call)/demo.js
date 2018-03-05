@@ -1,3 +1,6 @@
+
+// абстактная функция
+
 var arr = [
     {
         name:'tom',
@@ -24,5 +27,5 @@ function find(age) {
     return ret;
 }
 
-
+//
 console.log(find.call(arr,25));

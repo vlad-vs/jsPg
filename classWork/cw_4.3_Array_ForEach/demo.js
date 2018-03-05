@@ -4,24 +4,26 @@ var num = [34,21,1,3,2,4];
 var newU = Array.apply(Array,users);
 
 users.push('11');
+
 console.log(newU);
 
 
-//
-// for (let i = 0; i < users.length; i++) {
-//     console.log(users[i]);
-// }
-// let us2 = users.slice();
-//
-// users.push('aa');
-//
-// // users.forEach(function (item,i,sors) {
-// //     if (item === 'andy') {
-// //         return '';
-// //     }
-// //     console.log(item)
-// // });
-//
+for (let i = 0; i < users.length; i++) {
+    console.log(users[i]);
+}
+
+let us2 = users.slice();
+
+users.push('aa');
+
+users.forEach(function (item,i,sors) {
+    if (item === 'andy') {
+        return '';
+    }
+    console.log(item)
+});
+
+
 // num.some(function (a,b) {
 //     return a>b
 // });

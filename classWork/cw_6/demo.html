@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" type="text/css" href="demo.css">-->
+    <script src="demo.js"></script>
+</head>
+
+<style type="text/css">
+    #canvas {
+        border: 1px solid black;
+        width: 640px;
+        height: 480px;
+    }
+</style>
+<body class="body">
+
+<canvas id="canvas">
+    Hello browser
+</canvas>
+
+<script type="text/javascript">
+    var canvas = document.getElementById('canvas');
+    canvas.width = 640;
+    canvas.height = 480;
+    // возвращает контекст рисования на холсте
+    var ctx = canvas.getContext('2d');
+    var rectWith = 100;
+    var rectHight = 100;
+
+    ctx.fillStyle = 'rgba(255,0,0,.5)';
+    ctx.restore();
+
+
+    function drawRects() {
+        ctx.save();
+        ctx.fillStyle = 'rgba(0,0,255,.5)';
+        ctx.fillRect(1, 1, 100, 100);
+
+        ctx.fillStyle = 'rgba(0,255,0,.5)';
+        ctx.fillRect(30, 30, 100, 100);
+
+        ctx.restore();
+    }
+
+    function drowRectCenter(posX, posY, rWith, rHeight) {
+        ctx.fillRect(posX - rectWith / 2, posY - rectHight / 2, rWith, rHeight);
+    }
+
+    drawRects();
+    drowRectCenter(canvas.width / 2, canvas.height / 2, 100, 100);
+</script>
+
+</body>
+</html>

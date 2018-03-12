@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" type="text/css" href="demo.css">-->
+    <script src="demo.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<style type="text/css">
+    .item {
+        background: #eeeeee;
+        border: 1px solid lightgrey;
+    }
+    .my-super-id{
+        color: red;
+    }
+</style>
+<body class="body">
+
+<div class="item item01"><span>01</span></div>
+<div class="item item02"><p>02</p></div>
+<div class="item item03">03</div>
+<div class="item item04">04</div>
+
+<!--<h1>Restore</h1>-->
+
+<!--<div class="div">-->
+
+<!--<div class="item item01">01</div>-->
+<!--<div class="item item02">02</div>-->
+<!--<div class="item item03">03</div>-->
+<!--<div class="item item04">04</div>-->
+<!--</div>-->
+
+<script type="text/javascript">
+    // $('.item:parent')
+    //     .css({
+    //         'border': '1px solid red'
+    //     })
+
+    //=========hide======================================================
+
+    // $('.item').hover(function (event) {
+    //     $(this).css({
+    //         'background': 'red',
+    //         'transition': '.2s ease'
+    //     });
+    // })
+    //
+    // $('.item').mouseleave(function (event) {
+    //     $(this).css({
+    //         'background': 'white',
+    //         'transition': '.1s ease'
+    //     })
+    // });
+    //
+    // $('.item').on('click',function () {
+    //     $(this).hide('fast')
+    // });
+    //
+    // $('h1').on('click',function () {
+    //     $('.item:hidden').show('fast')
+    // })
+
+    //=========animation======================================================
+
+    // $('.item').on('click',function () {
+    //     $(this).animate({
+    //         'marginLeft':'+=100px'
+    //     })
+    // });
+    //
+    // $('.item').on('dbclick',function () {
+    //     $(this).animate({
+    //         'marginRight':'-=100px'
+    //     })
+    // });
+
+    //=========animation======================================================
+    // $('.item').on('click', function () {
+    //     if (!this.isCliked) {
+    //         $(this).animate({
+    //             'opacity': '0'
+    //         }, 1000);
+    //         this.isCliked = true
+    //     } else if (this.isCliked) {
+    //         $(this).animate({
+    //             'opacity': '1'
+    //         }, 1000);
+    //         this.isCliked = false
+    //     }
+    // });
+    //=========animation======================================================
+    // $('.item').on('click', function () {
+    //     if ($(this).attr('clicked') !=='clicked') {
+    //         $(this)
+    //             .stop()
+    //             .animate({'opacity': '0'}, 1000,function () {
+    //                 $(this).animate({'opacity': '0.2'},200)
+    //             })
+    //             .attr('clicked', 'clicked')
+    //     } else {
+    //         $(this)
+    //             .stop()
+    //             .animate({
+    //             'opacity': '1'
+    //         }, 1000)
+    //             .removeAttr('clicked');
+    //     }
+    // });
+
+    //=========add classes======================================================
+
+    // $('.item').addClass('hello');
+    //
+    // $('.item').removeClass('item')
+
+    //??????????????????????????????????
+    // $('.item').on('click', function () {
+    //     setTimeout(function () {
+    //         $(this).css({
+    //             'border': '1px solid red'})
+    //     },2000)
+    // });
+
+    //=========toggleClass======================================================
+    $('.item').on('click', function () {
+        // $(this).removeClass('item');
+        $(this).toggleClass('item my-super-id')
+        // $(this).toggleClass('my-super-id')
+    })
+
+    // $('.item').append('<span>!!!!!!!!!</span>')
+    // $('.item').after('<span>&&&&</span>')
+    // $('.item').wrap('<p></p>')
+    // $('.item').wrapAll('<p></p>')
+    // $('.item').unwrap('<div></div>')
+    // $('.item').empty('<p></p>')
+    // $('.item').remove()
+
+    //========= click события on off ==============================================
+    $('.item').on('click',function () {
+        console.log('1');
+        $(this).off('click.space')
+    });
+
+    $('.item').on('click.space',function () {
+        console.log('2')
+    })
+
+    // localStorage.setItem('user',"Jhon");
+    // alert(localStorage.getItem('user'))
+
+    // sessionStorage.setItem('user',"Jhon");
+    // alert(sessionStorage.getItem('user'))
+
+</script>
+
+</body>
+</html>

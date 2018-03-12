@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="demo.css">
+    <script src="demo.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<style type="text/css">
+
+</style>
+<body class="body">
+
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+
+
+<script type="text/javascript">
+
+    var query = function (path) {
+        var nodes = [];
+        if (typeof path === 'string') {
+            nodes = document.querySelectorAll(path)
+        }
+
+        function each(fn) {
+            var n = 0;
+            nodes.forEach(function (node) {
+                n++;
+                fn.call(node, n, node)
+            })
+            return this;
+        }
+
+        function on(typeEvent, fn) {
+            this.each(function (n, node) {
+                node.addEventListener(typeEvent, fn)
+            });
+
+            return this;
+        }
+
+        return {
+            each: each,
+            on: on
+        }
+    };
+
+    query('p')
+        .each(function (n, node) {
+            console.log(this, n)
+        }).on('click', function () {
+        alert('p')
+    })
+
+</script>
+
+</body>
+</html>

@@ -69,12 +69,8 @@
             corousel.scrollLeft = corousel.scrollLeft - s;
         }
 
-        // if (corousel.scrollLeft > 735 ){
-        //     flag = false
-        // }
-
         requestAnimationFrame(coruselUpdate);
-    })
+    });
 
     document.addEventListener("DOMContentLoader", function (event) {
         coruselUpdate();

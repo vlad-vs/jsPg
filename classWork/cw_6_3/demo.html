@@ -11,10 +11,27 @@
 
         #canvas {
             border: 1px solid #000;
-            cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="), auto;
-            width: 640px;
-            height: 480px;
+            /*cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="), auto;*/
+            width: 1000px;
+            height: 600px;
 
+        }
+
+        .color {
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+
+        .colorSample {
+            background-color: black;
+            margin-top: 20px;
+            text-align: center;
+            display: block;
+            box-sizing: border-box;
+            width: 400px;
+            height: 40px;
+            border: 1px solid black;
         }
     </style>
 </head>
@@ -22,9 +39,63 @@
 <canvas id="canvas">
     Your browser doesnot work with canvas
 </canvas>
-<textarea id="textAria"></textarea>
+
+<br>
+
+<input type="text" id="textAria"></input>
+
+<div class="colorInputs">
+    <form action="">
+
+        <div class="color">
+            <label for="red">Red</label>
+            <input id="red" type="number" class="red in-color" min="0" max="255" value="0">
+        </div>
+
+        <div class="color">
+            <label for="green">Green</label>
+            <input id="green" type="number" class="green in-color" min="0" max="255" value="0">
+        </div>
+
+        <div class="color">
+            <label for="blue">Blue</label>
+            <input id="blue" type="number" class="blue in-color" min="0" max="255" value="0">
+        </div>
+
+    </form>
+
+    <br>
+
+    <div class="">
+        <label for="sizeCircle">Cize</label>
+        <input id="sizeCircle" type="number" class="sizeCircle" min="0" max="100" value="20">
+    </div>
+
+    <br>
+    <input class="buttonClear" type="button" value="Clear">
+    <br>
+
+    <span>Color sample</span>
+    <div class="colorSample">
+
+    </div>
+</div>
 <script type="text/javascript">
 
+    var canvas = document.getElementById('canvas');
+    //Два обязательных отрибута width и height
+    canvas.width = 1000;
+    canvas.height = 600;
+    //возвращает контекст рисования на холсте
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+
+    // drawRects();
+    // drawRectCenter(canvas.width / 2, canvas.height / 2, 150, 100);
+
+    var flag = false;
+
+    //прямоугольник по центру
     function drawRectCenter(posX, posY, rectWidth, rectHeight) {
         ctx.fillRect(
             posX - rectWidth / 2,
@@ -34,73 +105,155 @@
         );
     }
 
-    function drawRects() {
-        ctx.save();
-        //Заполним его прямоугольниками
-        ctx.fillStyle = 'rgba(0, 0, 255, 0.5)';
-        ctx.fillRect(10, 10, 150, 100);
-        //RGBA stands for red green blue alpha
-        ctx.fillStyle = 'rgba(0, 255, 0, 0.5)';
-        ctx.fillRect(30, 30, 150, 100);
-
-        ctx.restore();
+    function getValue(o) {
+        return o.value;
     }
+
+    //======================================================================
+
+    function getAtribVal(tag) {
+        return document.querySelector(tag).value;
+
+    }
+
+    function setColor(tag) {
+        document.querySelector(tag).addEventListener('click', function (event) {
+            var v = String(event.target.value);
+            this.setAttribute("value", v)
+            // console.log(v);
+            return v
+        })
+    }
+
+    //======================================================================
+    //прямоугольники
+
+    // function drawRects() {
+    //     ctx.save();
+    //     //Заполним его прямоугольниками
+    //     ctx.fillStyle = 'rgba(0, 0, 255, 0.5)';
+    //     ctx.fillRect(10, 10, 150, 100);
+    //     //RGBA stands for red green blue alpha
+    //     ctx.fillStyle = 'rgba(0, 255, 0, 0.5)';
+    //     ctx.fillRect(30, 30, 150, 100);
+    //
+    //     ctx.restore();
+    // }
 
     function drawCircle(x, y) {
         ctx.save();
 
-        // ctx.fillStyle = 'rgba(0, 255, 0, 0.5)';
-        // ctx.beginPath();
-        // ctx.arc(240, 200, 25, 0, 2 * Math.PI);
-        // ctx.fill();
+        let colRed = getAtribVal('.red');
+        let colBlue = getAtribVal('.blue');
+        let colGreen = getAtribVal('.green');
+        let size = getAtribVal('.sizeCircle');
+
 
         var circle = new Path2D();
 
-        circle.arc(x, y, 25, 0, 2 * Math.PI);
-        ctx.fillStyle = 'rgba(0, 255, 0, 1)';
+        circle.arc(x, y, size, 0, 2 * Math.PI);
+        ctx.fillStyle = 'rgba(' + colRed + ',' + colGreen + ',' + colBlue + ', 1)';
         ctx.fill(circle);
+        // ctx.stroke(circle);
+        ctx.restore();
+    }
+
+    function drawRect(x, y) {
+        ctx.save();
+        ctx.fillStyle = 'rgba(0, 255, 255, .5)';
+        ctx.fillRect(x, y, 20, 20);
         // ctx.stroke(circle);
 
         ctx.restore();
     }
 
 
-    var canvas = document.getElementById('canvas');
-    //Два обязательных отрибута width и height
-    canvas.width = 640;
-    canvas.height = 480;
-    //возвращает контекст рисования на холсте
-    var ctx = canvas.getContext('2d');
-
-    drawRects();
-    ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
-    drawRectCenter(canvas.width / 2, canvas.height / 2, 150, 100);
-
-    var flag = false;
-
-
     canvas.addEventListener('mousemove', function (event) {
+
         var rect = canvas.getBoundingClientRect();
         var x = event.clientX - rect.left;
         var y = event.clientY - rect.top;
         document.getElementById('textAria').value = event.clientX + ':' + event.clientY;
         if (flag) {
+            // drawRect(x, y);
             drawCircle(x, y);
         }
     });
 
     canvas.addEventListener('mousedown', function (event) {
-        clear();
+        // clear();
         flag = true;
     });
 
     canvas.addEventListener('mouseup', function (event) {
         flag = false;
         // canvas.removeEventListener('mousemove',)
-    })
+    });
+
+    document.querySelector('.buttonClear').addEventListener('mousedown', function (event) {
+        clear();
+    });
+
+
+    function toArray(list) {
+        return Array.prototype.slice.call(list);
+    }
+
+
+    var arr = document.body.querySelectorAll('input');
+
+    for (var x = 0; x < arr.length; x++) {
+        arr[x].addEventListener("blur", function() {
+            let colRed = getAtribVal('.red');
+            let colBlue = getAtribVal('.blue');
+            let colGreen = getAtribVal('.green');
+            document.querySelector('.colorSample').style.backgroundColor = 'rgba(' + colRed + ',' + colGreen + ',' + colBlue + ', 1)';
+        });
+    }
+
+    // document.getElementsByTagName("input").addEventListener('blur', function (event) {
+    //     let colRed = getAtribVal('.red');
+    //     let colBlue = getAtribVal('.blue');
+    //     let colGreen = getAtribVal('.green');
+    //     document.querySelector('.colorSample').style.backgroundColor = 'rgba(' + colRed + ',' + colGreen + ',' + colBlue + ', 1)';
+    // })
+
+    // document.querySelector('.red').addEventListener('blur', function (event) {
+    //     let colRed = getAtribVal('.red');
+    //     let colBlue = getAtribVal('.blue');
+    //     let colGreen = getAtribVal('.green');
+    //     document.querySelector('.colorSample').style.backgroundColor = 'rgba(' + colRed + ',' + colGreen + ',' + colBlue + ', 1)';
+    // })
+
+    // document.querySelector('.blue').addEventListener('blur', function (event) {
+    //     let colRed = getAtribVal('.red');
+    //     let colBlue = getAtribVal('.blue');
+    //     let colGreen = getAtribVal('.green');
+    //     document.querySelector('.colorSample').style.backgroundColor = 'rgba(' + colRed + ',' + colGreen + ',' + colBlue + ', 1)';
+    // })
+    //
+    // document.querySelector('.green').addEventListener('blur', function (event) {
+    //     let colRed = getAtribVal('.red');
+    //     let colBlue = getAtribVal('.blue');
+    //     let colGreen = getAtribVal('.green');
+    //     document.querySelector('.colorSample').style.backgroundColor = 'rgba(' + colRed + ',' + colGreen + ',' + colBlue + ', 1)';
+    // })
+
+
+    // let arr = toArray( document.querySelector('.in-color'));
+    //
+    // arr.forEach(function (item,i,sors) {
+    //     item.addEventListener('blur', function (event) {
+    //         let colRed = getAtribVal('.red');
+    //         let colBlue = getAtribVal('.blue');
+    //         let colGreen = getAtribVal('.green');
+    //         document.querySelector('.colorSample').style.backgroundColor = 'rgba(' + colRed + ',' + colBlue + ',' + colGreen + ', 1)';
+    //     });
+    // })
+
 
     function clear() {
-        ctx.clearRect(0,0, canvas.width,canvas.height)
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
     }
 
 

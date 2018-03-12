@@ -12,5 +12,21 @@ json p и fireBase почитать
 
 pass 2d что-то типа канвас
 
+булева алгебра
+
+деление на 2
+8 >> 1 = 4 
+
+умножение на 2
+происходит побитовый сдвиг
+8 << 1 = 16
 
 
+
+//https://habrahabr.ru/post/114358/
+//https://habrahabr.ru/post/127014/
+//https://codepen.io/loktar00/pen/DJGbo?q=smoke&limit=all&type=type-pens
+//https://learn.javascript.ru/settimeout-setinterval
+//https://codepen.io/loktar00/pen/Khqio?page=1&
+//https://codepen.io/ada-lovecraft/pen/NNaqZz?q=smoke&limit=all&type=type-pens
+//https://learn.javascript.ru/js-animation

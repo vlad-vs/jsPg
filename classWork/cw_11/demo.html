@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" type="text/css" href="demo.css">
+	<script src="transport.js"></script>
+	<script src="table.js"></script>
+	<script src="users.js"></script>
+</head>
+<body class="body">
+
+	<script>
+        Transport.getData('http://jsonplaceholder.typicode.com/users').then(function (data) {
+            var users = new Users(data);
+
+           	var table = new Table({
+				colNames : User.getKeys(),
+                colModel : User.getKeys(),//['username','id'], //User.getKeys(),
+				colType : {
+				    id:'number',
+				},
+				data : users.getData()
+			});
+
+           	// table.sortColByIndex('id', false);
+			table
+				.sortColByIndex('name', false)
+				.render('body')
+
+            // data.forEach(function (userData) {
+				// var user = new User(userData);
+				// console.log(user)
+            // })
+        })
+	</script>
+
+</body>
+</html>

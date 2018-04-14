@@ -4,7 +4,7 @@
  authors:
    - Vlad Semenov
  resources:
-   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_5_BiggestWord/demo.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_5_BiggestWord/main.js
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_5_BiggestWord/demo.css
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_5_BiggestWord/demo.html
  normalize_css: no

@@ -4,7 +4,7 @@
  authors:
    - Vlad Semenov
  resources:
-   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_3_FiltrNumbers/demo.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_3_FiltrNumbers/main.js
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_3_FiltrNumbers/demo.css
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_3_FiltrNumbers/demo.html
  normalize_css: no

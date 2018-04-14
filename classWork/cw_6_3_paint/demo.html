@@ -42,7 +42,7 @@
 
 <br>
 
-<input type="text" id="textAria"></input>
+<input type="text" id="textAria">
 
 <div class="colorInputs">
     <form action="">
@@ -105,10 +105,6 @@
         );
     }
 
-    function getValue(o) {
-        return o.value;
-    }
-
     //======================================================================
 
     function getAtribVal(tag) {
@@ -116,14 +112,14 @@
 
     }
 
-    function setColor(tag) {
-        document.querySelector(tag).addEventListener('click', function (event) {
-            var v = String(event.target.value);
-            this.setAttribute("value", v)
-            // console.log(v);
-            return v
-        })
-    }
+    // function setColor(tag) {
+    //     document.querySelector(tag).addEventListener('click', function (event) {
+    //         var v = String(event.target.value);
+    //         this.setAttribute("value", v)
+    //         // console.log(v);
+    //         return v
+    //     })
+    // }
 
     //======================================================================
     //прямоугольники
@@ -167,12 +163,12 @@
         ctx.restore();
     }
 
-
     canvas.addEventListener('mousemove', function (event) {
 
         var rect = canvas.getBoundingClientRect();
         var x = event.clientX - rect.left;
         var y = event.clientY - rect.top;
+
         document.getElementById('textAria').value = event.clientX + ':' + event.clientY;
         if (flag) {
             // drawRect(x, y);
@@ -195,67 +191,23 @@
     });
 
 
-    function toArray(list) {
-        return Array.prototype.slice.call(list);
+    function colorSample() {
+        var arr = document.body.querySelectorAll('input');
+
+        for (var x = 0; x < arr.length; x++) {
+            arr[x].addEventListener("blur", function() {
+                let colRed = getAtribVal('.red');
+                let colBlue = getAtribVal('.blue');
+                let colGreen = getAtribVal('.green');
+                document.querySelector('.colorSample').style.backgroundColor = 'rgba(' + colRed + ',' + colGreen + ',' + colBlue + ', 1)';
+            });
+        }
     }
-
-
-    var arr = document.body.querySelectorAll('input');
-
-    for (var x = 0; x < arr.length; x++) {
-        arr[x].addEventListener("blur", function() {
-            let colRed = getAtribVal('.red');
-            let colBlue = getAtribVal('.blue');
-            let colGreen = getAtribVal('.green');
-            document.querySelector('.colorSample').style.backgroundColor = 'rgba(' + colRed + ',' + colGreen + ',' + colBlue + ', 1)';
-        });
-    }
-
-    // document.getElementsByTagName("input").addEventListener('blur', function (event) {
-    //     let colRed = getAtribVal('.red');
-    //     let colBlue = getAtribVal('.blue');
-    //     let colGreen = getAtribVal('.green');
-    //     document.querySelector('.colorSample').style.backgroundColor = 'rgba(' + colRed + ',' + colGreen + ',' + colBlue + ', 1)';
-    // })
-
-    // document.querySelector('.red').addEventListener('blur', function (event) {
-    //     let colRed = getAtribVal('.red');
-    //     let colBlue = getAtribVal('.blue');
-    //     let colGreen = getAtribVal('.green');
-    //     document.querySelector('.colorSample').style.backgroundColor = 'rgba(' + colRed + ',' + colGreen + ',' + colBlue + ', 1)';
-    // })
-
-    // document.querySelector('.blue').addEventListener('blur', function (event) {
-    //     let colRed = getAtribVal('.red');
-    //     let colBlue = getAtribVal('.blue');
-    //     let colGreen = getAtribVal('.green');
-    //     document.querySelector('.colorSample').style.backgroundColor = 'rgba(' + colRed + ',' + colGreen + ',' + colBlue + ', 1)';
-    // })
-    //
-    // document.querySelector('.green').addEventListener('blur', function (event) {
-    //     let colRed = getAtribVal('.red');
-    //     let colBlue = getAtribVal('.blue');
-    //     let colGreen = getAtribVal('.green');
-    //     document.querySelector('.colorSample').style.backgroundColor = 'rgba(' + colRed + ',' + colGreen + ',' + colBlue + ', 1)';
-    // })
-
-
-    // let arr = toArray( document.querySelector('.in-color'));
-    //
-    // arr.forEach(function (item,i,sors) {
-    //     item.addEventListener('blur', function (event) {
-    //         let colRed = getAtribVal('.red');
-    //         let colBlue = getAtribVal('.blue');
-    //         let colGreen = getAtribVal('.green');
-    //         document.querySelector('.colorSample').style.backgroundColor = 'rgba(' + colRed + ',' + colBlue + ',' + colGreen + ', 1)';
-    //     });
-    // })
-
+    colorSample();
 
     function clear() {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
     }
-
 
 </script>
 </body>

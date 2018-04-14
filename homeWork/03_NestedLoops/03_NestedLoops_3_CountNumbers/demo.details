@@ -4,7 +4,7 @@
  authors:
    - Vlad Semenov
  resources:
-   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/03_NestedLoops_3_CountNumbers/demo.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/03_NestedLoops_3_CountNumbers/main.js
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/03_NestedLoops_3_CountNumbers/demo.css
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/03_NestedLoops_3_CountNumbers/demo.html
  normalize_css: no

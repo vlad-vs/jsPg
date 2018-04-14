@@ -4,7 +4,7 @@
  authors:
    - Vlad Semenov
  resources:
-   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_7_WordReplacement/demo.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_7_WordReplacement/main.js
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_7_WordReplacement/demo.css
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/01_String_7_WordReplacement/demo.html
  normalize_css: no

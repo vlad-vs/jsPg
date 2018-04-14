@@ -1,0 +1,146 @@
+https://webpack.js.org/guides/installation/
+
+инстал локальный для проекта (консоль в папке проекта)
+
+//local
+npm install webpack
+npm install webpack-cli
+
+//global
+npm install --global webpack
+npm install --global webpack-cli
+
+установка зависимостей для проекта (почитать)
+npm init -y
+
+создание зависимого файла  node node_modules/webpack/bin/webpack.js webpack.config.js
+на основании webpack.config.js строка кода:
+    output: {
+        filename: 'index.js'
+        // path: path.resolve(__dirname, 'dist')
+    }
+
+
+// local server
+npm install --global node static
+
+
+// package.json
+"mode":"build",
+
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  }
+
+npm install sass-loader node-sass --save-dev
+
+npm install --save-dev css-loader
+
+node node_modules/webpack/bin/webpack.js webpack.config.js
+
+
+let Banner = require('./banner.js');
+window.addEventListener('DOMContentLoaded', function () {
+    var banner = Banner();
+    banner.render();
+});
+
+============================================= 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script type="text/javascript" src="dist/index.js"></script>
+</head>
+<body>
+https://webpack.js.org/
+https://habrahabr.ru/post/206678/
+npm install -g node-static
+</body>
+</html>
+
+
+============================================= 
+module.exports = {
+    devtool: 'eval',
+    entry: './src/main',
+    output: {
+        filename: 'index.js'
+    },
+    watch: true,
+    watchOptions: {
+        aggregateTimeout: 100
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ]
+            }
+        ]
+
+    }
+};
+
+============================================= 
+{
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            'es2015',
+                        ]
+                    }
+                }
+            },
+
+============================================= 
+webpack.config.js 
+module.exports = {
+	devtool: 'eval',
+	entry: './src/main',
+	output: {
+		filename: 'index.js'
+	},
+	watch: true,
+	watchOptions: {
+		aggregateTimeout: 100
+	},
+	module: {
+		rules: [
+			{
+				test: /\.css$/,
+				use: [ 'style-loader', 'css-loader' ]
+			},
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: [
+							'es2015',
+						]
+					}
+				}
+			},
+		]
+
+	}
+};
+
+webpack.config.js
+ {
+                    test: /\.scss$/,
+                    use: [{
+                        loader: "style-loader" // creates style nodes from JS strings
+                    }, {
+                        loader: "css-loader" // translates CSS into CommonJS
+                    }, {
+                        loader: "sass-loader" // compiles Sass to CSS
+                    }]
+============================================= 

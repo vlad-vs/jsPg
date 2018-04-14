@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" type="text/css" href="main.css">-->
+    <script src="demo.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<style type="text/css">
+    .panel {
+        display: none;
+        box-sizing: border-box;
+        width: 100px;
+        height: 50px;
+        background-color: red;
+    }
+
+</style>
+<body class="body">
+
+<div class="slides">
+    <a href="#" class="btn-slide">Link1</a>
+    <div class="panel"></div>
+</div>
+
+<div class="slides">
+    <a href="#" class="btn-slide">Link2</a>
+    <div class="panel"></div>
+</div>
+
+<!--<div class="slides1">-->
+    <!--<a href="#" class="btn-slide_1">Link</a>-->
+    <!--<div class="panel"></div>-->
+<!--</div>-->
+
+<!--<div class="slides2">-->
+    <!--<a href="#" class="btn-slide_2">Link</a>-->
+    <!--<div class="panel"></div>-->
+<!--</div>-->
+
+<h1>Restore</h1>
+
+<div class="items">
+    <div class="item item01">01</div>
+    <div class="item item02"><p>02</p></div>
+    <div class="item item03">03</div>
+    <div class="item item04">04</div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('.slides > a').click(function () {
+            let a = this.parent;
+            console.log(a);
+        })
+
+        // let arr = $('.slides');
+        // for(var x = 0; x < arr.length; x++){
+        //     arr[x].click(function () {
+        //         console.log(x);
+        //         // $(arr).ch.slideToggle("slow");
+        //         // $(this).toggleClass('active')
+        //     })
+        // }
+
+    })
+
+
+    // $(document).ready(function () {
+    //     $('.btn-slide_1').click(function () {
+    //         $('.slides1 > .panel').slideToggle("slow");
+    //         // $(this).toggleClass('active')
+    //     })
+    // })
+    //
+    // $(document).ready(function () {
+    //     $('.btn-slide_2').click(function () {
+    //         $('.slides2 > .panel').slideToggle("slow");
+    //         // $(this).toggleClass('active')
+    //     })
+    // })
+
+</script>
+
+</body>
+</html>

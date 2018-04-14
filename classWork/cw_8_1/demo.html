@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" type="text/css" href="main.css">-->
+    <script src="demo.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<style type="text/css">
+
+    .item {
+        background: #eeeeee;
+        border: 1px solid lightgrey;
+    }
+
+    .my-super-id{
+        color: red;
+    }
+
+</style>
+<body class="body">
+
+
+<script type="text/javascript">
+
+    var arr = [
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqEKbScstl06-yeIMqGFFBGaY9TQVAS7NYqyUzggFsedzZyI40',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqEKbScstl06-yeIMqGFFBGaY9TQVAS7NYqyUzggFsedzZyI402',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgCgoQhck6t-DLG0d7c41yNHMbbG7Bb8E2fOxkjZzwMT8TXI9'
+    ];
+
+    arr.forEach(function (src) {
+        var img = new Image();
+        img.src = src;
+        $('body').append(img)
+    })
+</script>
+</body>
+</html>

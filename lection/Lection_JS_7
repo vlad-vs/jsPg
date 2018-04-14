@@ -1,0 +1,36 @@
+storage =>
+    local storage 4 мб как куки но может быть очищен браузером в любой момент времени,
+    session storage - потеря инфо при закрытии вкладки,
+    cookie - минус не большой обьем.
+
+webPack - компилятор проектов!
+
+
+
+babel
+
+npm init -y
+
+npm install babel-cli babel-core babel-preset-es2015 --save-dev
+
+{
+  "name": "ES6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist --presets es2015",
+    "watch": "babel src -d dist --presets es2015 -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
+
+npm run build
+npm run watch

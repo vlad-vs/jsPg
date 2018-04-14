@@ -4,7 +4,7 @@
  authors:
    - Vlad Semenov
  resources:
-   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_10_Factorial/demo.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_10_Factorial/main.js
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_10_Factorial/demo.css
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_10_Factorial/demo.html
  normalize_css: no

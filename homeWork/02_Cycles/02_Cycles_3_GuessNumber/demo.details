@@ -4,7 +4,7 @@
  authors:
    - Vlad Semenov
  resources:
-   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_3_GuessNumber/demo.js
+   - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_3_GuessNumber/main.js
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_3_GuessNumber/demo.css
    - https://github.com/vlad-vs/jsPg/tree/master/homeWork/02_Cycles_3_GuessNumber/demo.html
  normalize_css: no
